@@ -1,4 +1,12 @@
+<app-component1></app-component1>
 <hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<p *ngIf="accountlist.length > 1">There are many account list </p>
+  <ul>
+  <li *ngFor="let list of accountlist">
+    {{list.Accid}} , {{list.AccName}}
+
+  </li>
+  </ul>
+  <p><b>Two way binding - showing content from textbox into label</b></p>
+   <input type="text" [(ngModel)]="setTwowaybind" />
+   {{setTwowaybind}}
